@@ -1,10 +1,15 @@
 <% @products.each do |product| %>
 <div>
-  <%= product.price %>
-  <%= product.title %>
+  <div>
+    $<%= product.price %>
+    <%= product.title %>
+    <% if product.map_url %>
+      <a href=<%= product.map_url %>>Google Map</a>
+    <% else %>
+      No Map
+    <% end %>
+  </div>
   <%= product.description %>
-  <% if product.map_url %>
-    <a href=<%= product.map_url %>>Google Map</a>
-  <% end %>
+
 </div>
 <% end %>

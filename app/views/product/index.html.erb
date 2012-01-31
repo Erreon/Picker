@@ -8,8 +8,9 @@
     <% else %>
       No Map
     <% end %>
+    <div><%= link_to "Vote Yes", up_vote_path(product.id), :remote => true %></a></div>
+    <div><%= link_to "Vote No", down_vote_path(product.id), :remote => true %></a></div>
   </div>
   <%= product.description %>
-
 </div>
 <% end %>

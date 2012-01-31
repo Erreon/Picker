@@ -4,7 +4,19 @@ class ProductController < ApplicationController
     def index
       @products = Product.all
     end
-    
+
+    def up_vote
+      @product = Product.find(params[:id])
+      @product.votes += 1
+      @product.save
+    end
+
+    def down_vote
+      @product = Product.find(params[:id])
+      @product.votes -= 1
+      @product.save
+    end
+
 	def show
 	  @product = Product.find(params[:id])
 	end

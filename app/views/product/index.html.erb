@@ -10,11 +10,11 @@
     <% else %>
       No Map
     <% end %>
-    <div class="span6">
-      <%= link_to "Yes", up_vote_path(product.id), :remote => true %></a> <optgroup></optgroup>
-      <%= link_to "No", down_vote_path(product.id), :remote => true %></a>
+    <div id="vote" class="span6">
+      <%= link_to "Yes", up_vote_path(product.id) %></a>
+      <%= link_to "No", down_vote_path(product.id)%></a>
     </div>
-    <div class="span2">Score: <%= product.votes %></div>
+    <div id=vote-<%= product.id %> class="span2">Score: <%= product.votes %></div>
   </div>
   <div class="span8">
     <%= product.description %>

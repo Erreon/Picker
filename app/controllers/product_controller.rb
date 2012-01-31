@@ -8,13 +8,20 @@ class ProductController < ApplicationController
     def up_vote
       @product = Product.find(params[:id])
       @product.votes += 1
-      @product.save
+      if @product.save
+		flash[:notice] = "Success! Your product has been saved."
+		redirect_to :action => 'index'
+	  end
     end
 
     def down_vote
       @product = Product.find(params[:id])
       @product.votes -= 1
       @product.save
+      if @product.save
+		flash[:notice] = "Success! Your product has been saved."
+		redirect_to :action => 'index'
+	  end
     end
 
 	def show

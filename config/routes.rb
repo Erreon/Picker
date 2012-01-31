@@ -1,7 +1,9 @@
 Picker::Application.routes.draw do
-  resources :product
-  match 'product/up_vote/:id' => 'product#up_vote', :as => 'up_vote'
-  match 'product/down_vote/:id' => 'product#down_vote', :as => 'down_vote'
-  root :to => 'product#index'
-
+  resources :products do
+    member do
+      get 'up_vote'
+      get 'down_vote'
+    end
+  end
+  root :to => 'products#index'
 end

@@ -1,6 +1,8 @@
+<div id="prospects" class="span16">
+<h2>The Prospects</h2>
 <% @products.each do |product| %>
-<div>
-  <div>
+<div class="row">
+  <div class="span8">
     $<%= product.price %>
     <%= product.title %>
     <% if product.map_url %>
@@ -8,9 +10,16 @@
     <% else %>
       No Map
     <% end %>
-    <div><%= link_to "Vote Yes", up_vote_path(product.id), :remote => true %></a></div>
-    <div><%= link_to "Vote No", down_vote_path(product.id), :remote => true %></a></div>
+    <div class="span6">
+      <%= link_to "Yes", up_vote_path(product.id), :remote => true %></a> <optgroup></optgroup>
+      <%= link_to "No", down_vote_path(product.id), :remote => true %></a>
+    </div>
+    <div class="span2">Score: <%= product.votes %></div>
   </div>
-  <%= product.description %>
+  <div class="span8">
+    <%= product.description %>
+  </div>
 </div>
+<br /><br />
 <% end %>
+</div>

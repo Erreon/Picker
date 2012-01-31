@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price: MyString
+  address: MyString
+  description: MyText
+  map_url: MyString
+  yes: 1
+  no: 1
+
+two:
+  price: MyString
+  address: MyString
+  description: MyText
+  map_url: MyString
+  yes: 1
+  no: 1

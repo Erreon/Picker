@@ -14,3 +14,8 @@ class Product < ActiveRecord::Base
 		new({ :price => price , :title => title, :description => description, :map_url => map_url, :images => images })
 	end
 end
+
+test = {
+	val1: :test1,
+	val2: :foobar,
+}

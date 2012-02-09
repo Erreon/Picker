@@ -1,0 +1,30 @@
+<div id="prospects" class="span16">
+<h2>The Prospects</h2>
+<% @products.each do |product| %>
+<div class="row">
+  <div class="span8">
+    $<%= product.price %>
+    <%= product.title %>
+    <% if product.map_url %>
+      <a href=<%= product.map_url %>>Google Map</a>
+    <% else %>
+      No Map
+    <% end %>
+    <div id="vote" class="span6">
+      <%= link_to "Yes", up_vote_product_path(product.id) %></a>
+      <%= link_to "No", down_vote_product_path(product.id)%></a>
+    </div>
+    <div id=vote-<%= product.id %> class="span2">Score: <%= product.votes %></div>
+  </div>
+  <div class="span8">
+    <%= product.description %>
+  </div>
+    <% if product.images.present? %>
+      <% product.images.each do |image| %>
+        <%= image_tag(image) %>
+      <% end %>
+    <% end %>
+</div>
+<br /><br />
+<% end %>
+</div>

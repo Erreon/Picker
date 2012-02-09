@@ -1,0 +1,12 @@
+<div>
+  <div>
+$<%= @product.price %>
+<%= @product.title %>
+<% if @product.map_url %>
+  <a href=<%= @product.map_url %>>Google Map</a>
+<% else %>
+  No Map
+<% end %>
+</div>
+<%= @product.description %>
+</div>
